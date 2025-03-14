@@ -1,9 +1,10 @@
 /*
-SGDB: MySQL
-Programador: Angie M. Ibarrola Valenzuela
-Fecha: Mar 13, 2025
-Script: Gobierno postgres
-*/
+ * DBMS: postgres
+ * Programmer: AMIV (MySQL to Postgres) - INM (Original in MySQL)
+ * Date: Mar 7, 2025
+ * Script: Gobierno
+ */
+
 CREATE DATABASE Gobierno;
 
 CREATE TABLE ministerio (
