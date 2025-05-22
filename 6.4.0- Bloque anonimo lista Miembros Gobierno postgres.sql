@@ -6,14 +6,14 @@
  * que recoja la lista de miembros cuyo alias es distinto de NULL: Por cada miembro obtenido, se imprimirá por consola un mensaje.
  */
 
-UPDATE miembro
+/*UPDATE miembro
 SET codigoministerio = NULL 
-	WHERE codmiembro = 1;
+	WHERE codmiembro = 6; -- tmb 1
 
 SELECT *
 FROM miembro m
 	WHERE alias IS NOT NULL
-	ORDER BY codmiembro;
+	ORDER BY codmiembro;*/
 
 DO $$
 DECLARE
