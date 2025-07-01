@@ -1,0 +1,51 @@
+/*1.*/
+use Pokemon_ra7_amiv
+db.createCollection("c_pokemon")
+
+/*2.*/
+db.c_pokemon.find({"nombre": "Pikachu"})
+
+/*3.*/
+ db.c_pokemon.find({
+	"estadisticas.hp": {$gt: 40},
+	"estadisticas.ataque": {$in: [45, 80]}
+  })
+  
+db.c_pokemon.find({	$and: [
+	{"estadisticas.hp": {$gt: 40}},
+	{$or: [
+		{"estadisticas.ataque": 45},
+		{"estadisticas.ataque": 80}
+	]}
+]})
+
+/*4.*/
+db.c_pokemon.insertOne({
+	"nombre": "Machamp",
+	"tipo": "Lucha",
+	"estadisticas": {
+		"hp": 95,
+		"velocidad": 95
+	},
+	"evoluciona_a": {
+		"nombre": "Machamp",
+		"nivel": 100
+	}
+})
+
+/*5.*/
+db.c_pokemon.updateMany({
+	"tipo": "Fuego",
+	"estadisticas.velocidad": {$lte: 90}
+	},
+	{ $set:{"estadisticas.velocidad": 65}
+})
+
+/*6.*/
+db.c_pokemon.deleteMany({
+	$and: [
+		{"defensa": [{$lt: 100}, {$gte: 45}]},
+		{"evoluciona_a.nivel": {$lt: 25}}
+	]
+})
+
